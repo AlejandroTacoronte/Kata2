@@ -3,33 +3,33 @@ package cata2;
 import java.util.HashMap;
 
 public class counElement {
-    private int[] element;
-    HashMap<Integer,Integer> histogram;
+    private String[] element;
+    HashMap<String,Integer> histogram;
     
-    public counElement(int[] element)
+    public counElement(String[] element)
     {
         this.element=element;
         histogram= new HashMap<>();
         completeHistogram();
     }
 
-    public int[] getNumber() {
+    public String[] getString() {
         return element;
     }
     
-    public int getFrecuency(int number)
+    public int getFrecuency(String compare)
     {
-        if(!histogram.containsKey(number))
+        if(!histogram.containsKey(compare))
                 return 0;
         else
-                return histogram.get(number);
+                return histogram.get(compare);
     }
 
-    public HashMap<Integer, Integer> getHistogram() {
+    public HashMap<String, Integer> getHistogram() {
         return histogram;
     }
 
-    public void setElement(int[] element) {
+    public void setElement(String[] element) {
         this.element = element;
         histogram=new HashMap<>();
         completeHistogram();
@@ -37,7 +37,7 @@ public class counElement {
     
     public void completeHistogram()
     {
-        for (int i : element) {
+        for (String i : element) {
             histogram.put(i,getFrecuency(i)+1);
         }
     }
@@ -45,9 +45,9 @@ public class counElement {
     public void count()
     {
         int counted=0;
-        int max=0;
+        String max=null;
         
-        for (int i : histogram.keySet()) {
+        for (String i : histogram.keySet()) {
             if(histogram.get(i)>counted)
             {
                 counted=histogram.get(i);

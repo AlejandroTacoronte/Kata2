@@ -26,10 +26,10 @@ public class Cata2 {
 
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
-        int[] elements = {1,3,2,1,2,2,1,3,6,7,8,9,4,3,3,4,67,8,0,2};
+        String[] elements = {"ale","s","t","q","s","ale","ale","t","t"};
         counElement counter = new counElement(elements);
         counter.count();
-        int[] elements2 = {1,3,2,1,2,2,1,3,6,7,8,9,4,3,3,4,67,8,0,3};
+        String[] elements2 = {"ale","s","t","q","s","ale","ale"};
         counter.setElement(elements2);
         counter.count();
     }
